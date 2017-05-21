@@ -1,0 +1,4 @@
+class SearchDispatch
+	
+
+end

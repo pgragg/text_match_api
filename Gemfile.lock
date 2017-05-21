@@ -1,26 +1,68 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    activemodel (5.1.1)
+      activesupport (= 5.1.1)
+    activerecord (5.1.1)
+      activemodel (= 5.1.1)
+      activesupport (= 5.1.1)
+      arel (~> 8.0)
     activesupport (5.1.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    arel (8.0.0)
     byebug (9.0.6)
     cachy (0.4.1)
       mini_memory_store
     concurrent-ruby (1.0.5)
+    diff-lcs (1.3)
+    elasticsearch (5.0.4)
+      elasticsearch-api (= 5.0.4)
+      elasticsearch-transport (= 5.0.4)
+    elasticsearch-api (5.0.4)
+      multi_json
+    elasticsearch-transport (5.0.4)
+      faraday
+      multi_json
+    faraday (0.12.1)
+      multipart-post (>= 1.2, < 3)
+    hashie (3.5.5)
     httparty (0.15.5)
       multi_xml (>= 0.5.2)
     i18n (0.8.1)
     mini_memory_store (0.1.0)
     minitest (5.10.2)
+    multi_json (1.12.1)
     multi_xml (0.6.0)
+    multipart-post (2.0.0)
     mustermann (1.0.0)
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
+    rack-test (0.6.3)
+      rack (>= 1.0)
+    rake (12.0.0)
     redis (3.3.3)
+    redis_test (0.0.10)
+    rspec (3.5.0)
+      rspec-core (~> 3.5.0)
+      rspec-expectations (~> 3.5.0)
+      rspec-mocks (~> 3.5.0)
+    rspec-core (3.5.3)
+      rspec-support (~> 3.5.0)
+    rspec-expectations (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-mocks (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-support (3.5.0)
+    searchkick (2.3.0)
+      activemodel (>= 4.1)
+      elasticsearch (>= 1)
+      hashie
     sinatra (2.0.0)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -35,12 +77,19 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord
   activesupport
   bundler
   byebug
   cachy
+  elasticsearch
   httparty
+  rack-test
+  rake
   redis
+  redis_test
+  rspec
+  searchkick
   sinatra
 
 BUNDLED WITH

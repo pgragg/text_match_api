@@ -4,6 +4,12 @@ Bundler.require(:default)
 
 Dir['initializers/*.rb'].each {|f| load f.to_s}
 
-get '/api/v1/:action' do
-	ApiController.send(params[:action], params)
+class SinatraServer < Sinatra::Base
+	set :root, File.dirname(__FILE__)
+
+  enable :sessions
+  
+	get '/api/v1/:action' do
+		ApiController.send(params[:action], params)
+	end
 end
