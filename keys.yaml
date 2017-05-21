@@ -1,0 +1,6 @@
+production:
+  access_key:
+    "0125487bfe287fe2cd630f93cea4ac12"
+test: 
+  access_key: 
+    "testing_access_key"

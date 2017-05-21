@@ -2,7 +2,7 @@ Dir['lib/*.rb'].each { |f| load f.to_s }
 class ApiController
 
 	def self.load_data(params)
-		return unless api_key_given(params)
+		raise AuthenticationError unless api_key_given(params)
 		
 	end
 
@@ -21,3 +21,7 @@ class ApiController
 	end
 
 end
+
+class AuthenticationError < StandardError
+end
+
